@@ -27,7 +27,6 @@ const Feed = () => {
     const fetchPosts = async () => {
       const response = await fetch("/api/prompt");
       const data = await response.json();
-
       setPosts(data);
     };
     fetchPosts();
@@ -44,7 +43,7 @@ const Feed = () => {
           required
           className="search_input peer"
         />
-        <PromptCardList data={[posts]} handleTagClick={() => {}} />
+        <PromptCardList data={posts} handleTagClick={() => {}} />
       </form>
     </section>
   );
